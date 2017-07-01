@@ -9,6 +9,8 @@
 #include "kalman_filter.h"
 #include "tools.h"
 
+using Eigen::MatrixXd;
+
 class FusionEKF {
 public:
   /**
@@ -40,10 +42,11 @@ private:
 
   // tool object used to compute Jacobian and RMSE
   Tools tools;
-  Eigen::MatrixXd R_laser_;
-  Eigen::MatrixXd R_radar_;
-  Eigen::MatrixXd H_laser_;
-  Eigen::MatrixXd Hj_;
+  MatrixXd R_laser_;
+  MatrixXd R_radar_;
+  MatrixXd H_laser_;
+  MatrixXd Hj_;
+  MatrixXd H_;
 };
 
 #endif /* FusionEKF_H_ */
